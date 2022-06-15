@@ -2,7 +2,8 @@
 <h1>Add a new bookmark</h1>
 <%= simple_form_for [ @list, @bookmark ] do |f|%>
 <%= f.input :comment %>
-<%= f.input :movie, collection: @movienames %>
+<%= f.input :movie_id, collection:@movienames, label_method: :second, value_method: :first %>
+<%= f.input :list_id, :as => :hidden, :input_html => { :value => @list.id } %>
 <%= f.submit %>
 <% end %>
 </div>

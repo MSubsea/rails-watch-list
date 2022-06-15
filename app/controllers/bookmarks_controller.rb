@@ -5,16 +5,14 @@ class BookmarksController < ApplicationController
     @movie = Movie.all
     @movienames = []
     @movie.each do |movie|
-      @movienames << movie.title
+      @movienames << [movie.id.to_s, movie.title]
     end
   end
 
   def create
-    @bookmark = Bookmarks.new(bookmark_params)
-    # we need `restaurant_id` to associate review with corresponding restaurant
-    @list = List.find(params[:list_id])
-    @bookmark.list = @list
+    @bookmark = Bookmark.new(bookmark_params)
     @bookmark.save
+    @list = List.find(params[:list_id])
     redirect_to list_path(@list)
   end
 
@@ -26,7 +24,7 @@ class BookmarksController < ApplicationController
 
   private
 
-  def list_params
-    params.require(:list).permit(:comment, :movie_id, :list_id)
+  def bookmark_params
+    params.require(:bookmark).permit(:comment, :list_id, :movie_id)
   end
 end

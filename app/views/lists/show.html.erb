@@ -3,7 +3,7 @@
   <h2>Bookmarks</h2>
   <% if @list.bookmarks.size > 0 %>
     <ul>
-      <%= @list.bookmarks.each do |bookmark| %>
+      <% @list.bookmarks.each do |bookmark| %>
         <li><%= bookmark.comment %></li>
       <% end %>
     </ul>

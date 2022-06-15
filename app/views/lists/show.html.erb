@@ -5,7 +5,7 @@
     <div class="row row-cols-4">
       <% @list.bookmarks.each do |bookmark| %>
           <div class="card col m-2 bg-secondary">
-            <h4 class="text-white"><%= bookmark.movie.title %></h4>
+            <h4 class="text-white p-2"><%= bookmark.movie.title %></h4>
             <hr>
             <img src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %> img" class="w-25">
             <div class="d-flex justify-content-between pb-2 rounded">

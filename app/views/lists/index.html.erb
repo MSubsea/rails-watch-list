@@ -9,7 +9,9 @@
             <%= link_to link_name, list_path(list), class: "m-2" %>
           </div>
           <div style="min-height: 100px" class="p-2">
-            <% if list.bookmarks.length > 0 %>
+            <% if list.photo.attached? %>
+              <%= cl_image_tag list.photo.key, height: 100, crop: :fill %>
+            <% elsif list.bookmarks.length > 0 %>
               <img src="<%= list.bookmarks.first.movie.poster_url %>" alt="<%= list.bookmarks.first.movie.title %> img" style="height: 100px">
             <% else %>
               <div class="w25">

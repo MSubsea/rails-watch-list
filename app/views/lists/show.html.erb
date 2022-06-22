@@ -11,22 +11,22 @@
     <div class="row row-cols-4">
       <% @list.bookmarks.each do |bookmark| %>
           <div class="card col m-2 bg-secondary">
-            <h4 class="text-white p-2"><%= bookmark.movie.title %></h4>
+            <h4 class="text-white p-2" style="font-size: 18px;"><%= bookmark.movie.title %></h4>
             <hr>
             <div class="d-flex">
               <div class="w-25">
                   <img src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %> img" class="w-100">
               </div>
               <div class="w-75 px-2">
-                <p class="text-white"><%= bookmark.movie.overview %></p>
+                <p class="text-white" style="font-size: 10px;"><%= bookmark.movie.overview %></p>
               </div>
             </div>
             <div class="d-flex justify-content-between pb-2 rounded">
               <div>
-                <h5 class="text-white"><%= bookmark.comment %></h5>
+                <h5 class="text-white" style="font-size: 18px;"><%= bookmark.comment %></h5>
               </div>
               <div>
-                <%= link_to "Remove", list_bookmark_path(bookmark), method: :delete, class: "btn btn-danger text-white" %>
+                <%= link_to "Remove", list_bookmark_path(bookmark), method: :delete, class: "btn btn-danger text-white", style: "font-size: 12px;" %>
               </div>
             </div>
           </div>
@@ -36,8 +36,8 @@
     <p>No bookmarks available.</p>
   <% end %>
   <div class="mt-3">
-    <%= link_to "Add bookmark", new_list_bookmark_path(@list), class: "btn btn-primary" %>
-    <%= link_to "Edit list", edit_list_path(@list), class: "btn btn-primary" %>
-    <%= link_to "All lists", root_path, class: "btn btn-primary" %>
+    <%= link_to "Add bookmark", new_list_bookmark_path(@list), class: "btn btn-primary", style: "font-size: 12px;" %>
+    <%= link_to "Edit list", edit_list_path(@list), class: "btn btn-primary", style: "font-size: 12px;" %>
+    <%= link_to "All lists", root_path, class: "btn btn-primary", style: "font-size: 12px;" %>
   </div>
 </div>

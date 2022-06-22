@@ -44,7 +44,7 @@
   <h2>Reviews:</h2>
   <% if @list.votes.size > 0 %>
     <% @list.votes.each do |vote| %>
-      <div class="card pt-3">
+      <div class="card pt-3 m-2">
         <p class="px-2"><strong>Rating</strong>: <%= vote.rating %></p>
         <p class="px-2"><strong>Comment</strong>: <%= vote.content %></p>
       </div>

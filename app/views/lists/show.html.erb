@@ -45,7 +45,18 @@
   <% if @list.votes.size > 0 %>
     <% @list.votes.each do |vote| %>
       <div class="card pt-3 m-2">
-        <p class="px-2"><strong>Rating</strong>: <%= vote.rating %></p>
+        <div class="d-flex">
+          <div class="px-2">
+            <p ><strong>Rating</strong>:</p>
+          </div>
+          <div>
+            <p class="text-warning">
+              <% vote.rating.times do %>
+                <i class="fa fa-star"></i>
+              <% end %>
+            </p>
+          </div>
+        </div>
         <p class="px-2"><strong>Comment</strong>: <%= vote.content %></p>
       </div>
     <% end %>
@@ -53,6 +64,6 @@
     <p>No review available.</p>
   <% end %>
   <div class="mt-3">
-    <%= link_to "Add review", new_list_vote_path(@list), class: "btn btn-primary", style: "font-size: 12px;" %>
+    <%= link_to "Add review", new_list_vote_path(@list), class: "btn btn-primary m-2", style: "font-size: 12px;" %>
   </div>
 </div>
